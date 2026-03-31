@@ -8,27 +8,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <title>Javascript Library</title>
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="modal-overlay hidden">
         <div class="modal">
             <div class="bookNameFiled modalInputWrapper">
                 <label for="name">Name :</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" required>
             </div>
             <div class="bookAuthorField modalInputWrapper">
                 <label for="author">Author: </label>
-                <input type="text" id="author" name="author">
+                <input type="text" id="author" name="author" required>
             </div>
             <div class="numfields">
                 <div class="bookPages modalInputWrapper">
                     <label for="pages">Pages :</label>
-                    <input type="tel" id="pages" name="totalPages">
+                    <input type="tel" id="pages" name="totalPages" pattern="[0-9]*" required>
                 </div>
                 <div class="bookRelease modalInputWrapper">
                     <label for="bookRelease">Release year :</label>
-                    <input type="tel" id="bookRelease" name="yearOfRelease">
+                    <input type="tel" id="bookRelease" name="yearOfRelease" pattern="[0-9]*" required>
                 </div>
             </div>
             <div class="bookStatus">
@@ -45,7 +45,7 @@
                 </fieldset>
             </div>
             <div class="inputButton">
-                <button>Add Book</button>
+                <button class="createBook">Add Book</button>
                 <button class="cancelButton">Cancel</button>
             </div>
         </div>
