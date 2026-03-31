@@ -7,4 +7,10 @@
 :root
 {
     font-size: 62.5%;
+    font-family: 'Ephesis',cursive;
+    font-weight: 500;
+}
+body
+{
+    font-size: 3.5rem;
 }
