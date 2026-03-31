@@ -36,6 +36,11 @@ submitButton.addEventListener("click",()=>
 console.log("Script Is Working");
 bookCreator.addEventListener("click",()=>
 {
+    if(!bookName.value|!authorName.value|!bookPages.value|!releaseYear.value)
+    {
+        alert("Please Fill in the required Values!");
+        return;
+    }
     addBookToLibrary(bookName.value,authorName.value,bookPages.value,releaseYear.value,document.querySelector('input[type="radio"]:checked'));
     modalOverlay.classList.add("hidden");
     inputFields.forEach(input => input.value="");
