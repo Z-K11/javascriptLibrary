@@ -12,37 +12,42 @@
 </head>
 <body>
     <div class="modal-overlay hidden">
-        <div class="bookNameFiled">
-            <label for="name">Name :</label>
-            <input type="text" name="name" id="name">
-        </div>
-        <div class="bookAuthorField"></div>
-        <label for="author">Author: </label>
-        <input type="text" id="author" name="author">
-        <div class="numBoofiels">
-            <div class="bookPages">
-                <label for="pages">Pages :</label>
-                <input type="tel" id="pages" name="totalPages">
+        <div class="modal">
+            <div class="bookNameFiled modalInputWrapper">
+                <label for="name">Name :</label>
+                <input type="text" name="name" id="name">
             </div>
-            <div class="bookRelease">
-                <label for="bookRelease">Released year :</label>
-                <input type="tel" id="bookRelease" name="yearOfRelease">
+            <div class="bookAuthorField modalInputWrapper">
+                <label for="author">Author: </label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="numfields">
+                <div class="bookPages modalInputWrapper">
+                    <label for="pages">Pages :</label>
+                    <input type="tel" id="pages" name="totalPages">
+                </div>
+                <div class="bookRelease modalInputWrapper">
+                    <label for="bookRelease">Release year :</label>
+                    <input type="tel" id="bookRelease" name="yearOfRelease">
+                </div>
+            </div>
+            <div class="bookStatus">
+                <fieldset>
+                    <legend>Book Read :</legend>
+                    <div class="radioYes">
+                        <input type="radio" name="bookStatus" value="Yes" id="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div class="radioNo">
+                        <input type="radio" name="bookStatus" value="No" id="yes" >
+                        <label for="yes">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="inputButton">
+                <button>Add Book</button>
             </div>
         </div>
-        <div class="satusBookFiled">
-            <fieldset>
-                <legend>Book Read:</legend>
-                <div class="radioYes">
-                    <input type="radio" name="bookStatus" value="Yes" id="yes" checked>
-                    <label for="yes">Yes</label>
-                </div>
-                <div class="radioNo">
-                    <input type="radio" name="bookStatus" value="No" id="yes" checked>
-                    <label for="yes">No</label>
-                </div>
-            </fieldset>
-        </div>
-        <div class="inputButton"></div>
     </div>
     <!-- <div class="mainContainer">
         <div class="tableContainer">
