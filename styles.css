@@ -27,12 +27,25 @@ body
 .libraryManagementBlock
 {
     justify-self: center;
+    align-self: flex-start;
 }
 .addBook
 {
     border: none;
-    background-color: rgb(255, 0, 85);
+    background-color: rgba(255, 0, 85, 0.774);
     border-radius: 2rem;
     padding: 1rem 2rem;
     color: peachpuff;
+    font-family: 'Ephesis',cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+.tableContainer
+{
+    justify-self: center;
+}
+caption
+{
+    width: max-content;
 }
