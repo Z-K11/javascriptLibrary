@@ -7,10 +7,32 @@
 :root
 {
     font-size: 62.5%;
-    font-family: 'Ephesis',cursive;
-    font-weight: 500;
+   
 }
 body
 {
     font-size: 3.5rem;
+    background-color: peachpuff;
+    font-family: 'Ephesis',cursive;
+    font-weight: 500;
+    height: 100vh;
+}
+.mainContainer
+{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 5fr 1fr;
+}
+.libraryManagementBlock
+{
+    justify-self: center;
+}
+.addBook
+{
+    border: none;
+    background-color: rgb(255, 0, 85);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    color: peachpuff;
 }
