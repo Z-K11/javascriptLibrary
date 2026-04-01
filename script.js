@@ -36,9 +36,9 @@ submitButton.addEventListener("click",()=>
 console.log("Script Is Working");
 bookCreator.addEventListener("click",()=>
 {
-    if(!bookName.value|!authorName.value|!bookPages.value|!releaseYear.value)
+    if(!bookName.value|!authorName.value|isNaN(bookPages.value)|isNaN(releaseYear.value))
     {
-        alert("Please Fill in the required Values!");
+        alert("Invalid or No Input");
         return;
     }
     addBookToLibrary(bookName.value,authorName.value,bookPages.value,releaseYear.value,document.querySelector('input[type="radio"]:checked'));
