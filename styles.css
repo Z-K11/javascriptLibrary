@@ -165,6 +165,7 @@ td,th
     border: 0.1rem solid black;
     padding: 0.5rem 2rem;
     color: var(--main-dark,pink);
+    text-align: center;
 }
 td
 {

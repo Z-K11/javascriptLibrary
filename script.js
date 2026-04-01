@@ -37,14 +37,23 @@ submitButton.addEventListener("click",()=>
 console.log("Script Is Working");
 bookCreator.addEventListener("click",()=>
 {
-    if(!bookName.value||!authorName.value||isNaN(bookPages.value)||isNaN(releaseYear.value))
+    if(!bookName.value||!authorName.value||isNaN(bookPages.value)||isNaN(releaseYear.value)||document.querySelector('input[type="radio"]:checked')===null)
     {
         alert("Invalid or No Input");
         return;
     }
+    console.log(document.querySelector('input[type="radio"]:checked'));
+    console.log(document.querySelector('input[type="radio"]:checked').value);
     addBookToLibrary(bookName.value,authorName.value,bookPages.value,releaseYear.value,document.querySelector('input[type="radio"]:checked').value);
     modalOverlay.classList.add("hidden");
-    inputFields.forEach(input => input.value="");
+    inputFields.forEach(input =>
+    {
+        if(input.type==="radio")
+            input.checked="false";
+        else
+            input.value="";
+    }
+    );
     console.log(library);
     let toggleStatus = document.createElement("button");
     let newRow=table.insertRow(-1);
@@ -62,5 +71,6 @@ bookCreator.addEventListener("click",()=>
     cell6.appendChild(toggleStatus);
     toggleStatus.textContent="Toggle";
     toggleStatus.classList.add("addBook");
-    toggleStatus.style.fontSize="2rem";
+    toggleStatus.style.fontSize="1.5rem";
+    toggleStatus.style.padding="0.1 1rem";
 });
