@@ -154,6 +154,8 @@ th
 {
     font-weight: bold;
     font-size: 3rem;
+    color: var(--main-dark,pink);
+
 }
 table
 {
@@ -164,27 +166,27 @@ td,th
 {
     border: 0.1rem solid black;
     padding: 0.5rem 2rem;
-    color: var(--main-dark,pink);
     text-align: center;
 }
 td
 {
-    font-weight: 600;
+    font-weight: 500;
 }
 .removeButton
 {
-    color: black;
-    background-color: white;
+    color: peachpuff;
+    background-color: var(--main-dark,pink);
     font-weight: bold;
     padding:0.5rem 1rem;
     border: none;
     border-radius: 10rem;
     font-size: 1.5rem;
     text-align: center;
+    font-weight: 500;
 }
 .removeButton:hover
 {
-    color:white;
-    background-color: black;
+    color:var(--main-dark,pink);
+    background-color: peachpuff;
     cursor: pointer;
 }

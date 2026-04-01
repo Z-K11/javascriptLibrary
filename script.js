@@ -8,6 +8,11 @@ function makeBook (name,author,totalPages,yearOfRelease,read)
     this.read=read
     this.uid=crypto.randomUUID();
     console.log(`${this.name} stored succesfully`);
+   
+}
+makeBook.prototype.returnid= function()
+{
+    return this.uid;
 }
 function addBookToLibrary(name,author,totalPages,yearOfRelease,read)
 {
@@ -57,6 +62,9 @@ bookCreator.addEventListener("click",()=>
     console.log(library);
     let toggleStatus = document.createElement("button");
     let removeBook = document.createElement("button");
+    removeBook.dataset.action='remove';
+    removeBook.dataset.uid=library[library.length-1].returnid();
+    toggleStatus.dataset.action='toggle';
     let newRow=table.insertRow(-1);
     let cell1 = newRow.insertCell(0);    
     let cell2 = newRow.insertCell(1);    
@@ -75,7 +83,20 @@ bookCreator.addEventListener("click",()=>
     toggleStatus.textContent="Toggle";
     removeBook.textContent="x";
     removeBook.classList.add("removeButton");
-    toggleStatus.classList.add("addBook");
+    toggleStatus.classList.add("removeButton");
     toggleStatus.style.fontSize="1.5rem";
     toggleStatus.style.padding="0.1 1rem";
+});
+table.addEventListener("click",(e)=>
+{
+    if(e.target.dataset.action==='remove')
+    {
+        const bookId=e.target.dataset.uid;
+        library=library.filter(book => book.uid !==bookId);
+        e.target.closest('tr').remove();
+    }
+  /*   if(e.target.dataset.action==='toggle')
+    {
+
+    } */
 });
