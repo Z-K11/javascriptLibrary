@@ -11,7 +11,7 @@
 }
 body
 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     background-color: peachpuff;
     font-family: 'Ephesis',cursive;
     font-weight: 500;
@@ -49,12 +49,12 @@ body
 }
 .tableContainer
 {
-    justify-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
 }
-caption
-{
-    width: max-content;
-}
+
 .modal
 {
     width: max-content;
@@ -148,4 +148,18 @@ legend
 .hidden
 {
     display: none;
+}
+th
+{
+    font-family: serif;
+}
+table
+{
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+}
+td,th
+{
+    border: 0.1rem solid black;
+    padding: 0.5rem 2rem;
 }
