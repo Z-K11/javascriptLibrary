@@ -65,6 +65,7 @@ bookCreator.addEventListener("click",()=>
     removeBook.dataset.action='remove';
     removeBook.dataset.uid=library[library.length-1].returnid();
     toggleStatus.dataset.action='toggle';
+    toggleStatus.dataset.uid=library[library.length-1].returnid();
     let newRow=table.insertRow(-1);
     let cell1 = newRow.insertCell(0);    
     let cell2 = newRow.insertCell(1);    
@@ -89,14 +90,24 @@ bookCreator.addEventListener("click",()=>
 });
 table.addEventListener("click",(e)=>
 {
+    const bookId=e.target.dataset.uid;
     if(e.target.dataset.action==='remove')
     {
-        const bookId=e.target.dataset.uid;
         library=library.filter(book => book.uid !==bookId);
         e.target.closest('tr').remove();
     }
-  /*   if(e.target.dataset.action==='toggle')
+    if(e.target.dataset.action==='toggle')
     {
-
-    } */
+        const found = library.find(book=>book.uid===bookId);
+        if(found.read==='Yes')
+        {
+            found.read='No';
+            e.target.closest('tr').cells[4].textContent='No';
+        }
+        else
+        {
+            found.read='Yes';
+            e.target.closest('tr').cells[4].textContent='Yes';
+        }
+    }
 });
