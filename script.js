@@ -56,6 +56,7 @@ bookCreator.addEventListener("click",()=>
     );
     console.log(library);
     let toggleStatus = document.createElement("button");
+    let removeBook = document.createElement("button");
     let newRow=table.insertRow(-1);
     let cell1 = newRow.insertCell(0);    
     let cell2 = newRow.insertCell(1);    
@@ -63,13 +64,17 @@ bookCreator.addEventListener("click",()=>
     let cell4 = newRow.insertCell(3);    
     let cell5 = newRow.insertCell(4);
     let cell6 = newRow.insertCell(5);
+    let cell7 = newRow.insertCell(6);
     cell1.textContent=library[library.length-1].name;
     cell2.textContent=library[library.length-1].author;
     cell3.textContent=library[library.length-1].totalPages;
     cell4.textContent=library[library.length-1].yearOfRelease;
     cell5.textContent=library[library.length-1].read;
     cell6.appendChild(toggleStatus);
+    cell7.appendChild(removeBook);
     toggleStatus.textContent="Toggle";
+    removeBook.textContent="x";
+    removeBook.classList.add("removeButton");
     toggleStatus.classList.add("addBook");
     toggleStatus.style.fontSize="1.5rem";
     toggleStatus.style.padding="0.1 1rem";
