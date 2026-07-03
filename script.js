@@ -1,22 +1,40 @@
 let library = [];
-function makeBook (name,author,totalPages,yearOfRelease,read)
+class myBook
 {
-    this.name=name;
-    this.author=author;
-    this.totalPages=totalPages;
-    this.yearOfRelease=yearOfRelease;
-    this.read=read
-    this.uid=crypto.randomUUID();
-    console.log(`${this.name} stored succesfully`);
+    uid;
+    constructor(name,author,totalPages,yearOfRelease,read)
+    {
+        this.name=name;
+        this.author=author;
+        this.totalPages=totalPages;
+        this.yearOfRelease=yearOfRelease;
+        this.read=read;
+        this.uid=crypto.randomUUID();
+        console.log(`The Book ${this.name} successfuly added to the library`);
+    }
+    get uid()
+    {
+        return this.uid;
+    }
+}
+// function makeBook (name,author,totalPages,yearOfRelease,read)
+// {
+//     this.name=name;
+//     this.author=author;
+//     this.totalPages=totalPages;
+//     this.yearOfRelease=yearOfRelease;
+//     this.read=read
+//     this.uid=crypto.randomUUID();
+//     console.log(`${this.name} stored succesfully`);
    
-}
-makeBook.prototype.returnid= function()
-{
-    return this.uid;
-}
+// }
+// makeBook.prototype.returnid= function()
+// {
+//     return this.uid;
+// }
 function addBookToLibrary(name,author,totalPages,yearOfRelease,read)
 {
-    book=new makeBook(name,author,totalPages,yearOfRelease,read);
+    book=new myBook(name,author,totalPages,yearOfRelease,read);
     library.push(book);
 }
 let submitButton = document.querySelector(".addBook");
@@ -63,9 +81,9 @@ bookCreator.addEventListener("click",()=>
     let toggleStatus = document.createElement("button");
     let removeBook = document.createElement("button");
     removeBook.dataset.action='remove';
-    removeBook.dataset.uid=library[library.length-1].returnid();
+    removeBook.dataset.uid=library[library.length-1].uid;
     toggleStatus.dataset.action='toggle';
-    toggleStatus.dataset.uid=library[library.length-1].returnid();
+    toggleStatus.dataset.uid=library[library.length-1].uid;
     let newRow=table.insertRow(-1);
     let cell1 = newRow.insertCell(0);    
     let cell2 = newRow.insertCell(1);    
