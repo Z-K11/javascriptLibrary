@@ -1,7 +1,7 @@
 let library = [];
 class myBook
 {
-    uid;
+    #uid;
     constructor(name,author,totalPages,yearOfRelease,read)
     {
         this.name=name;
@@ -9,12 +9,12 @@ class myBook
         this.totalPages=totalPages;
         this.yearOfRelease=yearOfRelease;
         this.read=read;
-        this.uid=crypto.randomUUID();
+        this.#uid=crypto.randomUUID();
         console.log(`The Book ${this.name} successfuly added to the library`);
     }
     get uid()
     {
-        return this.uid;
+        return this.#uid;
     }
 }
 // function makeBook (name,author,totalPages,yearOfRelease,read)
@@ -34,7 +34,7 @@ class myBook
 // }
 function addBookToLibrary(name,author,totalPages,yearOfRelease,read)
 {
-    book=new myBook(name,author,totalPages,yearOfRelease,read);
+    let book=new myBook(name,author,totalPages,yearOfRelease,read);
     library.push(book);
 }
 let submitButton = document.querySelector(".addBook");
