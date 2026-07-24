@@ -15,20 +15,32 @@
         <div class="modal">
             <div class="bookNameFiled modalInputWrapper">
                 <label for="name">Name :</label>
-                <input type="text" name="name" id="name" required placeholder="Required">
+                <div class="errorWrapper">
+                    <input type="text" name="name" id="name" required placeholder="Required">
+                    <span class="error" id="nameError" aria-live="polite"></span>
+                </div>
             </div>
             <div class="bookAuthorField modalInputWrapper">
                 <label for="author">Author: </label>
-                <input type="text" id="author" name="author" required placeholder="Required">
+                <div class="errorWrapper">
+                    <input type="text" id="author" name="author" required placeholder="Required">
+                    <span class="error" id="authorError" aira-live="polite"></span>
+                </div>
             </div>
             <div class="numfields">
                 <div class="bookPages modalInputWrapper">
                     <label for="pages">Pages :</label>
-                    <input type="tel" id="pages" name="totalPages" pattern="[0-9]*" required placeholder="Required">
+                    <div class="errorWrapper">
+                        <input type="tel" id="pages" name="totalPages" pattern="[0-9]*" required placeholder="Required">
+                        <span class="error" id="pageError" aria-live="polite"></span>
+                    </div>
                 </div>
                 <div class="bookRelease modalInputWrapper">
                     <label for="bookRelease">Release year :</label>
-                    <input type="tel" id="bookRelease" name="yearOfRelease" pattern="[0-9]*" required placeholder="Required">
+                    <div class="errorWrapper">
+                        <input type="tel" id="bookRelease" name="yearOfRelease" pattern="[0-9]*" required placeholder="Required">
+                        <span class="error" id="releaseError" aria-live="polite"></span>
+                    </div>
                 </div>
             </div>
             <div class="bookStatus">
