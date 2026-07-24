@@ -58,6 +58,7 @@ body
 
 .modal
 {
+    width: 30%;
     font-family: serif;
     font-size: 1.6rem;
     background-color: rgb(66, 13, 35);
@@ -197,4 +198,16 @@ td
 .numfields
 {
     width: 100%;
+}
+.error
+{
+    background-color: rgba(177, 32, 92, 0.418);
+    /* background-color: rgba(175, 1, 73, 0.418); */
+    padding: 5px 10px 1px;
+    display: block;
+    border-radius: 0 0 0.7rem 0.7rem;
+}
+input.displayingError
+{
+    border-radius: 0.7rem 0.7rem 0 0;
 }

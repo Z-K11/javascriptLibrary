@@ -129,3 +129,72 @@ table.addEventListener("click",(e)=>
         }
     }
 });
+const form = document.querySelector('.modal');
+const nameError = document.querySelector("#nameError");
+const authorError = document.querySelector('#authorError');
+const pagesError = document.querySelector('#pageError');
+const releaseError = document.querySelector('#releaseError');
+const onlyNumbersAllowedRegex=/[^0-9]/;
+function checkNames(name,error,msg)
+{
+    if(name.value.trim()==="")
+    {
+        error.textContent=`${msg} name cannot be empty`;
+        error.classList.add('error');
+        name.classList.add('displayingError');
+    }
+    else
+    {
+        error.textContent='';
+        error.classList.remove('error');
+        name.classList.remove('displayingError');
+    }
+
+}
+function checkNumbers(name,error,msg)
+{
+    if(name.value.length>4)
+    {
+        name.classList.add('displayingError');
+        error.textContent=`${msg} cannot be longer than 4 digits`;
+        error.classList.add('error');
+    }
+    else if (onlyNumbersAllowedRegex.test(name.value))
+    {
+        name.classList.add('displayingError');
+        error.textContent=`${msg} can only be numbers`;
+        error.classList.add('error');
+    }
+    else
+    {
+        name.classList.remove('displayingError');
+        error.textContent='';
+        error.classList.remove('error');
+    }
+
+}
+form.addEventListener('input',event=>
+{
+    const target = event.target.id;
+    switch (target) {
+        case "name":
+            checkNames(bookName,nameError,"Book");
+            break;
+        case "author":
+            checkNames(authorName,authorError,"Author");
+            break;
+        case "pages":
+            checkNumbers(bookPages,pagesError,"Pages");
+            break;
+        case "bookRelease":
+            if(releaseYear.value.length<4)
+            {
+                releaseError.textContent="Release Year cannot be lesst than 4 digits";
+            }
+            else
+                checkNumbers(releaseYear,releaseError,'Release Year');
+            default:
+            break;
+    }
+}
+)
